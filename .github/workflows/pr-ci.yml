@@ -1,0 +1,12 @@
+name: PR CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    if: github.repository != 'assignUser/indirect-ci'
+    steps:
+      - run: echo tada! 
