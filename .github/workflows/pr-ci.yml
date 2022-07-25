@@ -5,8 +5,13 @@ on:
   pull_request:
 
 jobs:
-  test:
+  fail:
     runs-on: ubuntu-latest
     if: github.repository != 'assignUser/indirect-ci'
     steps:
-      - run: echo tada! 
+      - run: exit 1
+  success:
+    runs-on: ubuntu-latest
+    if: github.repository != 'assignUser/indirect-ci'
+    steps:
+      - run: exit 0
