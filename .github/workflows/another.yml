@@ -1,0 +1,13 @@
+name: PR CI 2
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  success:
+    name: 'Successfull run'
+    runs-on: ubuntu-latest
+    if: github.repository != 'assignUser/indirect-ci'
+    steps:
+      - run: exit 0
